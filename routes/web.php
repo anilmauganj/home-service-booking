@@ -16,7 +16,7 @@ Route::get('/', function () {
 Route::middleware(['auth'])->group(function () {
 
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('admin.dashboard.index');
     })->middleware(['verified', 'permission.auto'])->name('dashboard');
 
     Route::get('/profile', [ProfileController::class, 'edit'])
